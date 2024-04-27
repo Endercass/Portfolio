@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "router": "cd dreamland-router && bun i && bun run build"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
@@ -14,6 +15,11 @@
     "vite-plugin-dreamland": "^1.0.1"
   },
   "dependencies": {
-    "dreamland": "^0.0.14"
+    "@catppuccin/palette": "^1.1.1",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "dreamland": "0.0.14-patch",
+    "dreamland-router": "file:./dreamland-router/"
   }
 }
