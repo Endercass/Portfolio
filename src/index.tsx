@@ -35,17 +35,6 @@ const App: Component<EmptyArgs, EmptyArgs> = function () {
 
   this.mount = () => {
     Router.render(this.root);
-    const scrollpos = localStorage.getItem("scrollpos");
-    if (scrollpos) {
-      console.log(scrollpos);
-      // setTimeout(() => {
-      //   this.root.scrollTo(0, parseInt(scrollpos));
-      // }, 0);
-      this.root.scrollTo(0, parseInt(scrollpos));
-    }
-    window.onbeforeunload = () => {
-      localStorage.setItem("scrollpos", this.root.scrollTop.toString());
-    };
   };
 
   return <div id="app" />;
