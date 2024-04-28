@@ -35,54 +35,51 @@ const Navbar: Component<
       height: 100%;
       margin: 0;
       padding: 0;
+    }
+    li {
+      list-style: none;
+      margin: 0 16px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
 
-      li {
-        list-style: none;
-        margin: 0 16px;
-        font-size: 1.25rem;
-        font-weight: 600;
-        text-decoration: none;
-        text-transform: uppercase;
+    li a {
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
 
-        a {
-          color: var(--text);
-          text-decoration: none;
-          transition: all 0.3s;
-        }
+    li a:visited {
+      color: var(--text);
+    }
 
-        a:visited {
-          color: var(--text);
-        }
+    li a:active {
+      color: var(--text);
+    }
 
-        a:active {
-          color: var(--text);
-        }
-        a.active {
-          color: var(--red) !important;
-          filter: drop-shadow(0 0 0.5em var(--red)) !important;
-        }
-      }
+    li a.active {
+      color: var(--red) !important;
+      filter: drop-shadow(0 0 0.5em var(--red)) !important;
+    }
 
-      li:hover {
-        a {
-          color: var(--red);
-          filter: drop-shadow(0 0 0.5em var(--red));
-        }
+    li:hover {
+      a {
+        color: var(--red);
+        filter: drop-shadow(0 0 0.5em var(--red));
       }
     }
 
     .github {
       text-decoration: none;
       color: var(--text);
-      transition: color 0.2s;
+      transition: all 0.3s;
     }
 
     .github:hover {
       color: var(--red);
-
-      div {
-        filter: drop-shadow(0 0 0.5em var(--red));
-      }
+      filter: drop-shadow(0 0 0.5em var(--red));
     }
   `;
   return (

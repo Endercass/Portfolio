@@ -19,40 +19,40 @@ const Footer: Component<EmptyArgs, EmptyArgs> = function () {
       justify-content: space-between;
       align-items: center;
       width: 80%;
+    }
 
-      .left-info {
-        display: grid;
-        margin-left: 16px;
-        grid-template-rows: repeat(3, 1fr);
-        grid-auto-flow: column;
-        gap: 4px;
-        font-size: 12px;
+    .right-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: var(--text);
+      transition: all 0.3s;
+    }
 
-        a {
-          color: var(--sapphire);
-          text-decoration: none;
-          transition: all 0.3s;
-        }
+    .right-info:hover {
+      color: var(--red);
+      filter: drop-shadow(0 0 4px var(--red));
+    }
 
-        a:hover {
-          color: var(--red);
-          filter: drop-shadow(0 0 2px var(--red));
-        }
-      }
+    a {
+      color: var(--sapphire);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
 
-      .right-info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-        color: var(--text);
-        transition: all 0.3s;
-      }
+    a:hover {
+      color: var(--red);
+      filter: drop-shadow(0 0 2px var(--red));
+    }
 
-      .right-info:hover {
-        color: var(--red);
-        filter: drop-shadow(0 0 4px var(--red));
-      }
+    .left-info {
+      display: grid;
+      margin-left: 16px;
+      grid-template-rows: repeat(3, 1fr);
+      grid-auto-flow: column;
+      gap: 4px;
+      font-size: 12px;
     }
 
     .divider {

@@ -97,19 +97,19 @@ const Contact: Component<EmptyArgs, EmptyArgs> = function () {
       width: 60%;
       border-collapse: collapse;
       margin-top: 1em;
+    }
 
-      th {
-        font-size: 1.25rem;
-        text-align: left;
-        padding: 0.5em;
-        border: 1px solid var(--text);
-      }
+    th {
+      font-size: 1.25rem;
+      text-align: left;
+      padding: 0.5em;
+      border: 1px solid var(--text);
+    }
 
-      td {
-        font-size: 1rem;
-        padding: 0.5em;
-        border: 1px solid var(--text);
-      }
+    td {
+      font-size: 1rem;
+      padding: 0.5em;
+      border: 1px solid var(--text);
     }
 
     @media (max-width: 768px) {
