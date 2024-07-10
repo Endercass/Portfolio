@@ -67,37 +67,30 @@ const Home: Component<EmptyArgs, EmptyArgs> = function () {
       <h1>Endercass</h1>
 
       <p>
-        I'm a sophomore in highschool from New York State. Next year, I will be
-        a full-time student at my local community college. I will major in
-        Computer Science, receiving my AS Computer Science degree in 2026. I
-        will then pursue a BS Computer Science degree, although I am unsure
-        where I will study.
+        I have completed my sophomore year of high school and will be attending
+        college full-time next year. I am currently enrolled in an early college
+        program, and I am working towards an Associate of Science degree in
+        Computer Science, which will be earned along with my NYS Regents diploma
+        in 2026. I will then pursue a Bachelor of Science degree at a currently
+        undecided institution.
       </p>
 
       <p>
-        Professionally, I do not have much experience. I have never been
-        employed, but I have worked with and operated multiple teams and groups
-        related to development. I am currently a Licensed member of{" "}
-        <a href="https://mercurywork.shop/" target="_blank">
-          Mercury Workshop
-        </a>
-        , an organization that writes public FOSS software. I am also the owner
-        of the{" "}
-        <a href="https://oogabooga.games/" target="_blank">
-          Ooga Booga Games
-        </a>{" "}
-        project, which is an in-development web game project.
-      </p>
-
-      <p>
-        As part of the early college program I am enrolled in, I have taken the
-        following college-level courses:
+        As part of the early college process, I have taken the following college
+        courses:
       </p>
 
       <ul>
         <li>Intermediate Mathematics</li>
         <li>Drafting and Design Using AutoCAD</li>
       </ul>
+
+      <p>
+        After taking the Intermediate Mathematics course, I took the Accuplacer
+        Advanced Algebra and Functions exam and scored a 287, which places me in
+        Calculus I for the first semester of next year, allowing me to skip
+        multiple math courses.
+      </p>
 
       <p>
         The first semester of next year, I will be a full-time student on campus
@@ -114,10 +107,25 @@ const Home: Component<EmptyArgs, EmptyArgs> = function () {
       </ul>
 
       <p>
-        These courses will allow me to obtain a strong foundation in
-        college-level computer science and mathematics. I will also be able to
-        obtain a strong foundation in writing and communication, as well as a
-        strong foundation in history and physical education.
+        Professionally, I do not have much experience. I have never been
+        employed, but I have worked with and operated multiple teams and groups
+        related to development. I am currently a Licensed member of{" "}
+        <a href="https://mercurywork.shop/" target="_blank">
+          Mercury Workshop
+        </a>
+        , a group formerly responsible for the discovering of highly valuable
+        Chrome OS vulnerabilities. However, most of my work in the group is
+        dedicated to work on the{" "}
+        <a href="https://github.com/MercuryWorkshop/anuraOS" target="_blank">
+          anuraOS
+        </a>{" "}
+        project, an operating system in the browser with full x86 emulation and
+        a versatile app format. I am also the owner of the{" "}
+        <a href="https://oogabooga.games/" target="_blank">
+          Ooga Booga Games
+        </a>{" "}
+        project, which is an in-development web game platform. This project is
+        currently on hiatus, but I plan to resume development in the future.
       </p>
 
       <p>
@@ -127,10 +135,10 @@ const Home: Component<EmptyArgs, EmptyArgs> = function () {
       </p>
 
       <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>TypeScript</li>
-        <li>React, Node.js, Express.js</li>
-        <li>Svelte(Kit), dreamland.js</li>
+        <li>HTML, CSS</li>
+        <li>Javascript, TypeScript, Node.js</li>
+        <li>Express.js, Axum</li>
+        <li>React, Svelte(Kit), dreamland.js</li>
         <li>Rust, Go, C</li>
         <li>Protocol Buffers, gRPC</li>
         <li>Java</li>
@@ -144,8 +152,8 @@ const Home: Component<EmptyArgs, EmptyArgs> = function () {
 
       <ul>
         <li>C++</li>
-        <li>SQL</li>
-        <li>Dart, Flutter</li>
+        <li>SQL, GraphQL</li>
+        <li>Dart</li>
         <li>Machine Learning</li>
       </ul>
 
@@ -155,36 +163,13 @@ const Home: Component<EmptyArgs, EmptyArgs> = function () {
       </p>
 
       <ul>
+        <li>Python</li>
+        <li>PHP</li>
+        <li>WordPress</li>
+        <li>Effect (Could reconsider)</li>
         <li>
-          Python
-          {/* Say what you want, it's slow and has awful syntax. Truely a bad language */}
-        </li>
-        <li>
-          PHP
-          {/* Ehh maybe like 10 years ago, but not now */}
-        </li>
-        <li>
-          WordPress
-          {/* No fun */}
-        </li>
-        <li>
-          Effect
-          {/* Too much rambling below, maybe I will make a blog post instead */}
-          {/* <ul>
-            <li>
-              Effect is an interesting technology, however I feel as though it
-              simply just adds so much overhead and complexity to a project that
-              it requires almost a full re-learning of typescript to use
-              effectively
-            </li>
-            <li>
-              I would be open to using Effect in a professional environmen where
-              the benefits of Effect would be more apparent, but I will not be
-              using it in any personal projects aside from projects in which I
-              am using it for the sole purpose of familiarizing myself with the
-              technology
-            </li>
-          </ul> */}
+          Flutter
+          {/* I appreciate Dart, but I do not like the Flutter framework */}
         </li>
       </ul>
 
@@ -204,49 +189,6 @@ const Home: Component<EmptyArgs, EmptyArgs> = function () {
         </a>
         .
       </p>
-
-      <p>
-        PS:
-        <br />
-        <br />I am no longer affiliated with the Titanium Network community. I
-        may contribute to projects related to it in the future, but I will not
-        interact with the community itself, aside from the friends I have made
-        in it. I have left the discord server as of a few months ago, and I have
-        no intention of rejoining. If you are coming here from the Titanium
-        Network community, I advise you to contact me directly through my
-        Discord account. If you are looking for my reasons for leaving, I can
-        explain them very simply:
-      </p>
-
-      <ol>
-        <li>
-          The projects and services provided by the community are not of
-          interest to me anymore for the most part, as I no longer have the free
-          time to use them. Most of my free time is spent on my own projects and
-          studies.
-        </li>
-        <li>
-          The drama is honestly pathetic and frustrating. I enjoy hanging out
-          with a lot of the members, but when certain members, past and present,
-          are involved, the drama follows. Leaving the community gives me the
-          freedom to interact with the my friends without having to deal with
-          constant drama.
-        </li>
-      </ol>
-
-      <p>
-        That's all I have to say on the matter. If you have any questions, feel
-        free to ask me directly. I have no problem with answering questions or a
-        conversation about the matter. I also need to make it clear that I have
-        no problem with the community itself, just the drama that follows
-        certain members. It is also worth noting that I was only ever a member,
-        so my presence is not an obligation to the community. I wish all the
-        best to the community and its members, except for those whom the drama
-        follows.
-      </p>
-
-      {/* Large content for testing */}
-      {/* <div style={{ height: "1000px" }}></div> */}
     </div>
   );
 };
