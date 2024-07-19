@@ -1,16 +1,14 @@
-const Home: Component<EmptyArgs, EmptyArgs> = function () {
-  this.css = css`
+const Home: Component = function () {
+  this.css = `
     display: flex;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    animation: fadeIn 0.3s cubic-bezier(0.64, 0, 0.78, 0);
 
     h2 {
       font-size: 2em;
-      // margin-bottom: 0;
     }
     h1 {
       font-size: 3em;
@@ -50,7 +48,6 @@ const Home: Component<EmptyArgs, EmptyArgs> = function () {
       color: var(--red);
     }
 
-    /* In the following block I specify the home class due to a bug in css parsing */
     @media (max-width: 768px) {
       .home p,
       .home ul,

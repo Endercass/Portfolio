@@ -17,13 +17,13 @@ window.config = $store<Config>(
 );
 
 for (const color in config.theme) {
-  handle(use(config.theme[color as ColorName]), (val) => {
+  useChange(use(config.theme[color as ColorName]), (val) => {
     document.documentElement.style.setProperty(`--${color}`, val.hex);
   });
 }
 
-const App: Component<EmptyArgs, EmptyArgs> = function () {
-  this.css = css`
+const App: Component = function () {
+  this.css = `
     width: 100%;
     height: 100%;
     min-height: 100%;
@@ -34,7 +34,7 @@ const App: Component<EmptyArgs, EmptyArgs> = function () {
   `;
 
   this.mount = () => {
-    Router.render(this.root);
+    Router.mount(this.root as HTMLElement);
   };
 
   return <div id="app" />;

@@ -1,8 +1,8 @@
 import FontAwesomeIcon from "../icons";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 
-const Footer: Component<EmptyArgs, EmptyArgs> = function () {
-  this.css = css`
+const Footer: Component = function () {
+  this.css = `
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,20 +1,22 @@
-async function copyHandler(event: PointerEvent) {
-  const target = event.target as HTMLElement;
-  const code = target.closest("code");
-  const selection = window.getSelection();
-  if (code && selection) {
-    const range = document.createRange();
-    range.selectNodeContents(code);
-    selection.removeAllRanges();
-    selection.addRange(range);
-    await navigator.clipboard.writeText(code.textContent || "");
-  }
+function createHandler(transformer: (input: string) => string) {
+  return async function copyHandler(event: PointerEvent) {
+    const target = event.target as HTMLElement;
+    const code = target.closest("code");
+    const selection = window.getSelection();
+    if (code && selection) {
+      const range = document.createRange();
+      range.selectNodeContents(code);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      await navigator.clipboard.writeText(transformer(code.textContent || ""));
+    }
+  };
 }
-
 type UserPlatform = {
   name: string;
   type: "user";
   id: string;
+  transform?: (input: string) => string;
   hoverText?: string;
 };
 
@@ -22,6 +24,7 @@ type LinkPlatform = {
   name: string;
   type: "link";
   url: string;
+  transform?: (input: string) => string;
   hoverText?: string;
 };
 
@@ -46,9 +49,10 @@ const platforms: Platform[] = [
   {
     name: "Email",
     type: "user",
-    // No
     id: "contact [at] this domain",
-    hoverText: "Email hidden to prevent spam. Use common sense.",
+    transform: (input) =>
+      input.replace(" [at] this domain", `@${location.hostname}`),
+    hoverText: "Email hidden to prevent spam. Click to copy the real address.",
   },
   {
     name: "Mastodon",
@@ -63,13 +67,12 @@ const platforms: Platform[] = [
   },
 ];
 
-const Contact: Component<EmptyArgs, EmptyArgs> = function () {
-  this.css = css`
+const Contact: Component = function () {
+  this.css = `
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: fadeIn 0.3s cubic-bezier(0.64, 0, 0.78, 0);
 
     h1 {
       font-size: 3rem;
@@ -125,8 +128,8 @@ const Contact: Component<EmptyArgs, EmptyArgs> = function () {
       <h1>Contact</h1>
       <p>
         My main social media is Discord, and you can find me at{" "}
-        <code on:click={copyHandler}>endercass</code>. Below are some other ways
-        you can reach me.
+        <CopyableCode text="endercass" />. Below are some other ways you can
+        reach me.
       </p>
 
       <table>
@@ -142,9 +145,11 @@ const Contact: Component<EmptyArgs, EmptyArgs> = function () {
               <td>{platform.name}</td>
               <td>
                 {platform.type === "user" ? (
-                  <code on:click={copyHandler} title={platform.hoverText || ""}>
-                    {platform.id}
-                  </code>
+                  <CopyableCode
+                    text={platform.id}
+                    hoverText={platform.hoverText}
+                    transform={platform.transform}
+                  />
                 ) : (
                   <a href={platform.url} target="_blank">
                     {platform.url}
@@ -156,6 +161,26 @@ const Contact: Component<EmptyArgs, EmptyArgs> = function () {
         </tbody>
       </table>
     </div>
+  );
+};
+
+const CopyableCode: Component<{
+  text: string;
+  hoverText?: string;
+  transform?: (input: string) => string;
+}> = function () {
+  this.text ||= "missing text";
+  this.transform ||= (input) => input;
+
+  return (
+    <code
+      on:click={use(this.transform, (transformer) =>
+        createHandler(transformer),
+      )}
+      title={use(this.hoverText)}
+    >
+      {use(this.text)}
+    </code>
   );
 };
 

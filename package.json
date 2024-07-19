@@ -7,19 +7,19 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "router": "cd dreamland-router && bun i && bun run build"
+    "install": "cd node_modules/dreamland-router && npm install"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
-    "vite-plugin-dreamland": "^1.0.1"
+    "vite-plugin-dreamland": "^1.2.1"
   },
   "dependencies": {
     "@catppuccin/palette": "^1.1.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "dreamland": "0.0.14-patch",
-    "dreamland-router": "file:./dreamland-router/"
+    "dreamland": "^0.0.24",
+    "dreamland-router": "github:mercuryworkshop/dreamland-router"
   }
 }

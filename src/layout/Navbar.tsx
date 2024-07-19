@@ -4,11 +4,9 @@ import FontAwesomeIcon from "../icons";
 import pfp from "/icons/icon_32.png";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 
-const Navbar: Component<
-  { links: { title: string; path: string }[] },
-  EmptyArgs
-> = function () {
-  this.css = css`
+const Navbar: Component<{ links: { title: string; path: string }[] }> =
+  function () {
+    this.css = `
     background-color: var(--mantle);
     height: 64px;
     box-shadow: 0 4px 8px var(--mantle);
@@ -55,15 +53,6 @@ const Navbar: Component<
       color: var(--text);
     }
 
-    li a:active {
-      color: var(--text);
-    }
-
-    li a.active {
-      color: var(--red) !important;
-      filter: drop-shadow(0 0 0.5em var(--red)) !important;
-    }
-
     li:hover {
       a {
         color: var(--red);
@@ -82,52 +71,50 @@ const Navbar: Component<
       filter: drop-shadow(0 0 0.5em var(--red));
     }
   `;
-  return (
-    <header>
-      <nav>
-        <Link href="/home">
-          <img
-            src={pfp}
-            alt="Endercass' Profile Picture"
-            style={{
-              width: "32px",
-              height: "32px",
-              borderRadius: "16px",
-            }}
-          />
-        </Link>
-        <ul>
-          {use(this.links, (links) =>
-            links.map((link) => (
-              <li>
-                <Link activeClass="active" href={link.path}>
-                  {link.title}
-                </Link>
-              </li>
-            )),
-          )}
-        </ul>
-        <a
-          class="github"
-          href="https://github.com/Endercass/Portfolio"
-          target="_blank"
-        >
-          <div
-            aria-label="Github"
-            style={{
-              width: "32px",
-              height: "32px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+    return (
+      <header>
+        <nav>
+          <Link href="/">
+            <img
+              src={pfp}
+              alt="Endercass' Profile Picture"
+              style={{
+                width: "32px",
+                height: "32px",
+                borderRadius: "16px",
+              }}
+            />
+          </Link>
+          <ul>
+            {use(this.links, (links) =>
+              links.map((link) => (
+                <li>
+                  <Link href={link.path}>{link.title}</Link>
+                </li>
+              )),
+            )}
+          </ul>
+          <a
+            class="github"
+            href="https://github.com/Endercass/Portfolio"
+            target="_blank"
           >
-            <FontAwesomeIcon icon={faGithub} transform={{ size: 32 }} />
-          </div>
-        </a>
-      </nav>
-    </header>
-  );
-};
+            <div
+              aria-label="Github"
+              style={{
+                width: "32px",
+                height: "32px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <FontAwesomeIcon icon={faGithub} transform={{ size: 32 }} />
+            </div>
+          </a>
+        </nav>
+      </header>
+    );
+  };
 
 export default Navbar;
