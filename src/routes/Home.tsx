@@ -79,7 +79,7 @@ const Home: Component = function () {
             anuraOS
           </a>{" "}
           - An operating system in the browser with full x86 emulation and a
-          versatile app format. My work on this project is the reason I joined
+          versatile app format. My work on this project is the reason I joined{" "}
           <a href="https://mercurywork.shop/" target="_blank">
             Mercury Workshop
           </a>
