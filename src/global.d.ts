@@ -7,5 +7,7 @@ declare global {
   declare var config: Stateful<Config>;
   type Config = {
     theme: Stateful<Theme>;
+    themes: Theme[];
+    currentTheme: number;
   };
 }

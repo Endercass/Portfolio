@@ -1,4 +1,9 @@
-import { Colors, flavors } from "@catppuccin/palette";
+import {
+  CatppuccinFlavor,
+  ColorFormat,
+  Colors,
+  flavors,
+} from "@catppuccin/palette";
 export type Color = {
   hex: string;
   rgb: {
@@ -12,15 +17,39 @@ export type Color = {
     l: number;
   };
 };
-export type Theme = Colors<Color>;
 
-export const mochaTheme = Object.fromEntries(
-  flavors.mocha.colorEntries.map(([name, color]) => [
-    name,
-    {
-      hex: color.hex,
-      rgb: color.rgb,
-      hsl: color.hsl,
-    } as Color,
-  ]),
-) as Theme;
+export type Theme = Colors<Color> & {
+  symbolColor: Color;
+};
+
+const copyColor = (color: ColorFormat): Color =>
+  ({
+    hex: color.hex,
+    rgb: color.rgb,
+    hsl: color.hsl,
+  } as Color);
+
+const flavorToTheme = (theme: CatppuccinFlavor, symbolColor: Color): Theme =>
+  ({
+    ...Object.fromEntries(
+      theme.colorEntries.map(([name, color]) => [name, copyColor(color)]),
+    ),
+    symbolColor,
+  } as Theme);
+
+export const mochaTheme = flavorToTheme(
+  flavors.mocha,
+  copyColor(flavors.mocha.colors.red),
+);
+export const frappeTheme = flavorToTheme(
+  flavors.frappe,
+  copyColor(flavors.frappe.colors.peach),
+);
+export const latteTheme = flavorToTheme(
+  flavors.latte,
+  copyColor(flavors.latte.colors.yellow),
+);
+export const macchiatoTheme = flavorToTheme(
+  flavors.macchiato,
+  copyColor(flavors.macchiato.colors.green),
+);

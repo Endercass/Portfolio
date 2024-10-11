@@ -59,128 +59,65 @@ const Home: Component = function () {
 
   return (
     <div class="home">
-      <h2>Hello there, my name is</h2>
+      <h2>Hi, my name is</h2>
 
       <h1>Endercass</h1>
 
       <p>
-        I have completed my sophomore year of high school and will be attending
-        college full-time next year. I am currently enrolled in an early college
-        program, and I am working towards an Associate of Science degree in
-        Computer Science, which will be earned along with my NYS Regents diploma
-        in 2026. I will then pursue a Bachelor of Science degree at a currently
-        undecided institution.
+        I am a self-taught full-stack developer and computer science enthusiast,
+        however I am beginning a formal education in computer science. I prefer
+        to work on the backend, but am more experienced with frontend
+        development. I am interested in operating systems and embedded systems,
+        and I have a passion for low-level programming.
       </p>
 
-      <p>
-        As part of the early college process, I have taken the following college
-        courses:
-      </p>
+      <p>Some web projects that I have worked on include:</p>
 
       <ul>
-        <li>Intermediate Mathematics</li>
-        <li>Drafting and Design Using AutoCAD</li>
-      </ul>
-
-      <p>
-        After taking the Intermediate Mathematics course, I took the Accuplacer
-        Advanced Algebra and Functions exam and scored a 287, which places me in
-        Calculus I for the first semester of next year, allowing me to skip
-        multiple math courses.
-      </p>
-
-      <p>
-        The first semester of next year, I will be a full-time student on campus
-        and will take the following courses:
-      </p>
-
-      <ul>
-        <li>Prin. Programming</li>
-        <li>Programming in C++</li>
-        <li>English Composition I</li>
-        <li>Calculus I</li>
-        <li>History of Civilization I</li>
-        <li>Physical Education Elective</li>
-      </ul>
-
-      <p>
-        Professionally, I do not have much experience. I have never been
-        employed, but I have worked with and operated multiple teams and groups
-        related to development. I am currently a Licensed member of{" "}
-        <a href="https://mercurywork.shop/" target="_blank">
-          Mercury Workshop
-        </a>
-        , a group formerly responsible for the discovering of highly valuable
-        Chrome OS vulnerabilities. However, most of my work in the group is
-        dedicated to work on the{" "}
-        <a href="https://github.com/MercuryWorkshop/anuraOS" target="_blank">
-          anuraOS
-        </a>{" "}
-        project, an operating system in the browser with full x86 emulation and
-        a versatile app format. I am also the owner of the{" "}
-        <a href="https://oogabooga.games/" target="_blank">
-          Ooga Booga Games
-        </a>{" "}
-        project, which is an in-development web game platform. This project is
-        currently on hiatus, but I plan to resume development in the future.
-      </p>
-
-      <p>
-        I am currently a hobbyist full-stack developer, and I love to build
-        things and learn new technologies. I am proficient in the following
-        languages and technologies:
-      </p>
-
-      <ul>
-        <li>HTML, CSS</li>
-        <li>Javascript, TypeScript, Node.js</li>
-        <li>Express.js, Axum</li>
-        <li>React, Svelte(Kit), dreamland.js</li>
-        <li>Rust, Go, C</li>
-        <li>Protocol Buffers, gRPC</li>
-        <li>Java</li>
-        <li>Git, GitHub</li>
-        <li>Linux, Bash, Fish</li>
-        <li>VS Code, IntelliJ IDEA, Zed</li>
-        <li>WebAssembly, AssemblyScript</li>
-      </ul>
-
-      <p>I am currently learning the following languages and technologies:</p>
-
-      <ul>
-        <li>C++</li>
-        <li>SQL, GraphQL</li>
-        <li>Dart</li>
-        <li>Machine Learning</li>
-      </ul>
-
-      <p>
-        In the following languages and technologies, I have enough experience to
-        realize that I do not want to pursue them further:
-      </p>
-
-      <ul>
-        <li>Python</li>
-        <li>PHP</li>
-        <li>WordPress</li>
-        <li>Effect (Could reconsider)</li>
         <li>
-          Flutter
-          {/* I appreciate Dart, but I do not like the Flutter framework */}
+          <a href="https://github.com/MercuryWorkshop/anuraOS" target="_blank">
+            anuraOS
+          </a>{" "}
+          - An operating system in the browser with full x86 emulation and a
+          versatile app format. My work on this project is the reason I joined
+          <a href="https://mercurywork.shop/" target="_blank">
+            Mercury Workshop
+          </a>
         </li>
       </ul>
 
       <p>
-        I am planning on maintaining this website as a blog and portfolio. I
-        will post updates on my projects and write about my experiences with
-        computer science-related technologies. I will also write about my
-        experiences with college, so that I can help others who are considering
-        a degree in computer science, whether they are enrolled in an early
-        college program or taking a more traditional route.
+        Some of the languages and technologies that I have experience with
+        include:
       </p>
 
+      <ul>
+        <li>HTML, CSS</li>
+        <li>JavaScript, TypeScript, Node.js</li>
+        <li>Express.js, Axum</li>
+        <li>React, Svelte(Kit), dreamland.js</li>
+        <li>Rust, Go, C, C++</li>
+        <li>Protocol Buffers, gRPC</li>
+        <li>Java, Kotlin</li>
+        <li>Git, GitHub</li>
+        <li>Linux, Bash, Fish</li>
+        <li>WebAssembly, Emscripten, wasm-bindgen</li>
+        <li>SQL, GraphQL</li>
+        <li>Python</li>
+      </ul>
+
       <p>
-        You can see some of my projects on{" "}
+        I am still considering these languages and technologies, and I am
+        learning more about them:
+      </p>
+
+      <ul>
+        <li>PHP, Laravel</li>
+        <li>Effect TS</li>
+      </ul>
+
+      <p>
+        You can see my complete portfolio on{" "}
         <a href="https://github.com/Endercass" target="_blank">
           my GitHub profile
         </a>

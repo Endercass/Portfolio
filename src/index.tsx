@@ -2,12 +2,19 @@ import "dreamland";
 import { ColorName } from "@catppuccin/palette";
 
 import "./index.css";
-import { mochaTheme } from "./theme.tsx";
+import {
+  mochaTheme,
+  frappeTheme,
+  latteTheme,
+  macchiatoTheme,
+} from "./theme.tsx";
 import Router from "./Router.tsx";
 
 window.config = $store<Config>(
   {
     theme: $state(mochaTheme),
+    themes: [mochaTheme, frappeTheme, latteTheme, macchiatoTheme],
+    currentTheme: 0,
   },
   {
     ident: "config",

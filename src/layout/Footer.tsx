@@ -26,13 +26,12 @@ const Footer: Component = function () {
       justify-content: center;
       align-items: center;
       font-size: 24px;
-      color: var(--text);
+      color: var(--symbolColor);
       transition: all 0.3s;
     }
 
     .right-info:hover {
-      color: var(--red);
-      filter: drop-shadow(0 0 4px var(--red));
+      filter: drop-shadow(0 0 4px var(--symbolColor));
     }
 
     a {
@@ -101,7 +100,10 @@ const Footer: Component = function () {
         <div
           class="right-info"
           on:click={() => {
-            alert("Theme switcher coming soon!");
+            config.currentTheme =
+              (config.currentTheme + 1) % config.themes.length;
+
+            config.theme = $state(config.themes[config.currentTheme]);
           }}
         >
           <FontAwesomeIcon icon={faPalette} />

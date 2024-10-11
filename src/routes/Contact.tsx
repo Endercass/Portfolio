@@ -51,19 +51,22 @@ const platforms: Platform[] = [
     type: "user",
     id: "contact [at] this domain",
     transform: (input) =>
-      input.replace(" [at] this domain", `@${location.hostname}`),
+      input.replace(
+        " [at] this domain",
+        `@${window.location.hostname.split(".").slice(-2).join(".")}`,
+      ),
     hoverText: "Email hidden to prevent spam. Click to copy the real address.",
   },
   {
-    name: "Mastodon",
+    name: "XMPP",
     type: "user",
-    id: "@endercass@akkoma.mercurywork.shop",
-    hoverText: "I will probably never check this.",
-  },
-  {
-    name: "Reddit",
-    type: "user",
-    id: "u/Endercass",
+    id: "endercass [at] jabber [dot] this domain",
+    transform: (input) =>
+      input.replace(
+        " [at] jabber [dot] this domain",
+        `@jabber.${window.location.hostname.split(".").slice(-2).join(".")}`,
+      ),
+    hoverText: "JID hidden to prevent spam. Click to copy the real JID.",
   },
 ];
 
@@ -127,9 +130,8 @@ const Contact: Component = function () {
     <div class="contact">
       <h1>Contact</h1>
       <p>
-        My main social media is Discord, and you can find me at{" "}
-        <CopyableCode text="endercass" />. Below are some other ways you can
-        reach me.
+        I am most active on discord as <CopyableCode text="endercass" />. Below
+        are some other ways you can reach me.
       </p>
 
       <table>
