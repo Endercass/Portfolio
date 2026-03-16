@@ -1,3 +1,5 @@
+import { Component, css } from "dreamland/core";
+
 function createHandler(transformer: (input: string) => string) {
   return async function copyHandler(event: PointerEvent) {
     const target = event.target as HTMLElement;
@@ -66,61 +68,6 @@ const platforms: Platform[] = [
 ];
 
 const Contact: Component = function () {
-  this.css = `
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5em;
-    }
-
-    p {
-      font-size: 1.5rem;
-      width: 60%;
-      margin-bottom: 1em;
-    }
-
-    a {
-      color: var(--sapphire);
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    a:hover {
-      color: var(--red);
-      filter: drop-shadow(0 0 0.5rem var(--red));
-    }
-
-    table {
-      width: 60%;
-      border-collapse: collapse;
-      margin-top: 1em;
-    }
-
-    th {
-      font-size: 1.25rem;
-      text-align: left;
-      padding: 0.5em;
-      border: 1px solid var(--text);
-    }
-
-    td {
-      font-size: 1rem;
-      padding: 0.5em;
-      border: 1px solid var(--text);
-    }
-
-    @media (max-width: 768px) {
-      .contact table,
-      .contact p {
-        width: 90%;
-      }
-    }
-  `;
-
   return (
     <div class="contact">
       <h1>Contact</h1>
@@ -173,6 +120,63 @@ const Contact: Component = function () {
   );
 };
 
+Contact.style = css`
+  :scope {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+    
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    font-size: 1.5rem;
+    width: 60%;
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: var(--sapphire);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  a:hover {
+    color: var(--red);
+    filter: drop-shadow(0 0 0.5rem var(--red));
+  }
+
+  table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 1em;
+  }
+
+  th {
+    font-size: 1.25rem;
+    text-align: left;
+    padding: 0.5em;
+    border: 1px solid var(--text);
+  }
+
+  td {
+    font-size: 1rem;
+    padding: 0.5em;
+    border: 1px solid var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .contact table,
+    .contact p {
+      width: 90%;
+    }
+  }
+`;
+
 const CopyableCode: Component<{
   text: string;
   hoverText?: string;
@@ -183,9 +187,7 @@ const CopyableCode: Component<{
 
   return (
     <code
-      on:click={use(this.transform, (transformer) =>
-        createHandler(transformer),
-      )}
+      on:click={createHandler(this.transform)}
       title={use(this.hoverText)}
     >
       {use(this.text)}

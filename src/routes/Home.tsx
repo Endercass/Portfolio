@@ -1,57 +1,6 @@
+import { Component, css } from "dreamland/core";
+
 const Home: Component = function () {
-  this.css = `
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-
-    h1 {
-      font-size: 3em;
-      width: 60%;
-    }
-
-    p {
-      width: 60%;
-      font-size: 1.25em;
-    }
-
-    a {
-      color: var(--sapphire);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    a:hover {
-      color: var(--red);
-      filter: drop-shadow(0 0 0.5rem var(--red));
-    }
-
-    ul,
-    ol {
-      width: 60%;
-      font-size: 1.25rem;
-    }
-
-    li {
-      margin-bottom: 0.25em;
-    }
-
-    li::marker {
-      color: var(--red);
-    }
-
-    @media (max-width: 768px) {
-      .home p,
-      .home ul,
-      .home ol {
-        width: 90%;
-      }
-    }
-  `;
-
   return (
     <div class="home">
       <h1>My name is Cas!</h1>
@@ -125,5 +74,60 @@ const Home: Component = function () {
     </div>
   );
 };
+
+Home.style = css`
+  :scope {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+  
+  h1 {
+    font-size: 3em;
+    width: 60%;
+  }
+
+  p {
+    width: 60%;
+    font-size: 1.25em;
+  }
+
+  a {
+    color: var(--sapphire);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  a:hover {
+    color: var(--red);
+    filter: drop-shadow(0 0 0.5rem var(--red));
+  }
+
+  ul,
+  ol {
+    width: 60%;
+    font-size: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.25em;
+  }
+
+  li::marker {
+    color: var(--red);
+  }
+
+  @media (max-width: 768px) {
+    .home p,
+    .home ul,
+    .home ol {
+      width: 90%;
+    }
+  }
+`;
 
 export default Home;

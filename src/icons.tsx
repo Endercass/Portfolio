@@ -4,6 +4,7 @@ import {
   IconParams,
   icon,
 } from "@fortawesome/fontawesome-svg-core";
+import { Component, h } from "dreamland/core";
 
 function abstractToDreamland(element: AbstractElement): HTMLElement {
   return h(
@@ -21,7 +22,7 @@ const FontAwesomeIcon: Component<
 > = function () {
   return abstractToDreamland(
     icon(this.icon, this).abstract[0],
-  ) as DLElement<any>;
+  )
 };
 
 export default FontAwesomeIcon;

@@ -19,13 +19,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* jsx */
-    "jsx": "react",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
-
-    /* types */
-    "types": ["dreamland"]
+    "jsx": "react-jsx",
+		"jsxImportSource": "dreamland"
   },
   "include": ["src"]
 }

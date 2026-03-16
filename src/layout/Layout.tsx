@@ -1,18 +1,8 @@
-import Footer from "./Footer";
+import { Component, css } from "dreamland/core";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Layout: Component<EmptyArgs, { outlet: Element }> = function () {
-  this.css = `
-    height: 100%;
-    width: calc(100%);
-    display: flex;
-    flex-direction: column;
-
-    main {
-      flex: 1;
-    }
-  `;
-
   return (
     <div>
       <Navbar
@@ -32,5 +22,18 @@ const Layout: Component<EmptyArgs, { outlet: Element }> = function () {
     </div>
   );
 };
+
+Layout.style = css`
+  :scope {
+    height: 100%;
+    width: calc(100%);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+  }
+`;
 
 export default Layout;

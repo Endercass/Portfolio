@@ -1,73 +1,8 @@
+import { Component, createState, css } from "dreamland/core";
 import FontAwesomeIcon from "../icons";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 
 const Footer: Component = function () {
-  this.css = `
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--mantle);
-    height: 256px;
-    flex-shrink: 0;
-    gap: 32px;
-    box-shadow: 0 -4px 8px 0 var(--mantle);
-    margin-top: 32px;
-
-    .top-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 80%;
-    }
-
-    .right-info {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 24px;
-      color: var(--symbolColor);
-      transition: all 0.3s;
-    }
-
-    .right-info:hover {
-      filter: drop-shadow(0 0 4px var(--symbolColor));
-    }
-
-    a {
-      color: var(--sapphire);
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    a:hover {
-      color: var(--red);
-      filter: drop-shadow(0 0 2px var(--red));
-    }
-
-    .left-info {
-      display: grid;
-      margin-left: 16px;
-      grid-template-rows: repeat(3, 1fr);
-      grid-auto-flow: column;
-      gap: 4px;
-      font-size: 12px;
-    }
-
-    .divider {
-      width: 80%;
-      height: 1px;
-      background-color: var(--text);
-    }
-
-    .bottom-info {
-      display: grid;
-      grid-template-rows: repeat(3, 1fr);
-      gap: 8px;
-      font-size: 16px;
-      text-align: center;
-    }
-  `;
   return (
     <footer>
       <div class="top-info">
@@ -103,7 +38,7 @@ const Footer: Component = function () {
             config.currentTheme =
               (config.currentTheme + 1) % config.themes.length;
 
-            config.theme = $state(config.themes[config.currentTheme]);
+            config.theme = createState(config.themes[config.currentTheme]);
           }}
         >
           <FontAwesomeIcon icon={faPalette} />
@@ -118,5 +53,74 @@ const Footer: Component = function () {
     </footer>
   );
 };
+
+Footer.style = css`
+  :scope {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mantle);
+    height: 256px;
+    flex-shrink: 0;
+    gap: 32px;
+    box-shadow: 0 -4px 8px 0 var(--mantle);
+    margin-top: 32px;
+  }
+
+  .top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
+
+  .right-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: var(--symbolColor);
+    transition: all 0.3s;
+  }
+
+  .right-info:hover {
+    filter: drop-shadow(0 0 4px var(--symbolColor));
+  }
+
+  a {
+    color: var(--sapphire);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  a:hover {
+    color: var(--red);
+    filter: drop-shadow(0 0 2px var(--red));
+  }
+
+  .left-info {
+    display: grid;
+    margin-left: 16px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-flow: column;
+    gap: 4px;
+    font-size: 12px;
+  }
+
+  .divider {
+    width: 80%;
+    height: 1px;
+    background-color: var(--text);
+  }
+
+  .bottom-info {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    font-size: 16px;
+    text-align: center;
+  }
+`;
 
 export default Footer;

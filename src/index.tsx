@@ -1,4 +1,3 @@
-import "dreamland";
 import { ColorName } from "@catppuccin/palette";
 
 import "./index.css";
@@ -7,12 +6,18 @@ import {
   frappeTheme,
   latteTheme,
   macchiatoTheme,
+  Color,
 } from "./theme.tsx";
-import Router from "./Router.tsx";
+import { Component, createState, createStore, css } from "dreamland/core";
+import { Route, Router, router } from "dreamland/router";
+import Layout from "./layout/Layout.tsx";
+import Home from "./routes/Home.tsx";
+import Contact from "./routes/Contact.tsx";
+import Error404 from "./routes/404.tsx";
 
-window.config = $store<Config>(
+window.config = createStore<Config>(
   {
-    theme: $state(mochaTheme),
+    theme: createState(mochaTheme),
     themes: [mochaTheme, frappeTheme, latteTheme, macchiatoTheme],
     currentTheme: 0,
   },
@@ -24,13 +29,32 @@ window.config = $store<Config>(
 );
 
 for (const color in config.theme) {
-  useChange(use(config.theme[color as ColorName]), (val) => {
+  use(config.theme[color as ColorName]).listen((val: Color) => {
     document.documentElement.style.setProperty(`--${color}`, val.hex);
   });
+
+  config.theme[color as ColorName] = config.theme[color as ColorName]
 }
 
-const App: Component = function () {
-  this.css = `
+const App: Component = function (cx) {
+  cx.mount = () => {
+    router.route();
+  };
+
+  return <div id="app">
+    <Router>
+      <Route show={<Layout />}>
+        <Route show={<Home />} />
+        <Route path="contact" show={<Contact />} />
+
+        <Route path="*" show={<Error404 />} />
+      </Route>
+    </Router>
+  </div>
+};
+
+App.style = css`
+  :scope {
     width: 100%;
     height: 100%;
     min-height: 100%;
@@ -38,13 +62,8 @@ const App: Component = function () {
     color: var(--text);
     overflow-y: auto;
     overflow-x: hidden;
-  `;
-
-  this.mount = () => {
-    Router.mount(this.root as HTMLElement);
-  };
-
-  return <div id="app" />;
-};
+  }
+`;
 
 document.body.appendChild(<App />);
+
