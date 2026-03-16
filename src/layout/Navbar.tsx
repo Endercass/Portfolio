@@ -1,4 +1,4 @@
-import { Link, router } from "dreamland/router";
+import { Link } from "dreamland/router";
 import FontAwesomeIcon from "../icons";
 
 import pfp from "/icons/icon_32.png";
