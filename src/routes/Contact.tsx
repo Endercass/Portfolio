@@ -42,11 +42,6 @@ const platforms: Platform[] = [
     url: "https://github.com/Endercass",
   },
   {
-    name: "Twitter",
-    type: "link",
-    url: "https://twitter.com/Endercass0001",
-  },
-  {
     name: "Email",
     type: "user",
     id: "contact [at] this domain",
@@ -129,9 +124,21 @@ const Contact: Component = function () {
   return (
     <div class="contact">
       <h1>Contact</h1>
+
       <p>
-        I am most active on discord as <CopyableCode text="endercass" />. Below
-        are some other ways you can reach me.
+        If you know me in real life, you probably have some way to contact me already. I am always looking to
+        network with others even outside of STEM fields though (Artists and musicians are so inspiring!). If
+        you know me from game dev communities, whether another programmer or an artist, I would love to hear
+        your ideas!
+      </p>
+
+      <p>
+        I typically keep my online and real-life presence separate, so nothing on this page represents
+        my real name. I link to this page from my online and real-life presence though, and would appreciate
+        any messages sent through the platforms below, so feel free to reach out! I am most active on Discord
+        as <CopyableCode text="endercass" />, but I check all platforms regularly. If you are looking for a 
+        way to contact me professionally, my email is likely the most effective way to reach me, but I won't
+        be offended if I am contacted elsewhere.
       </p>
 
       <table>
